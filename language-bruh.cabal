@@ -1,0 +1,51 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: e0cddf40180eb3ec449d37d5bf1e44a520b1cd06179185051f2c102ddc1b2148
+
+name:           language-bruh
+version:        0.0.1.0
+description:    Please see the README on GitHub at <https://github.com/yuuriosity/language-bruh#readme>
+homepage:       https://github.com/yuuriosity/language-bruh#readme
+bug-reports:    https://github.com/yuuriosity/language-bruh/issues
+author:         Yulia Gorshkova
+maintainer:     yuuriosity@gmail.com
+copyright:      2022 Yulia Gorshkova
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/yuuriosity/language-bruh
+
+library
+  exposed-modules:
+      Language.Bruh.AST
+  other-modules:
+      Paths_language_bruh
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite language-bruh-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_language_bruh
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , language-bruh
+  default-language: Haskell2010
