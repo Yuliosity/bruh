@@ -8,7 +8,6 @@ copyright:           "2022 Yulia Gorshkova"
 
 extra-source-files:
 - README.md
-- CHANGELOG.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -35,6 +34,8 @@ ghc-options:
 
 library:
   source-dirs: src
+  dependencies:
+  - text
 
 tests:
   language-bruh-test:
@@ -45,4 +46,5 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
+    - hspec
     - language-bruh
