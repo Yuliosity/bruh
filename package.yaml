@@ -32,6 +32,10 @@ ghc-options:
 - -Wpartial-fields
 - -Wredundant-constraints
 
+default-extensions:
+  - OverloadedStrings
+  - PatternSynonyms
+
 library:
   source-dirs: src
   dependencies:

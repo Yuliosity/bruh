@@ -3,7 +3,7 @@ module Language.Bruh.AST where
 import Data.Text (Text)
 
 {-| Variables. |-}
-newtype Variable = VVar { vName :: Text }
+newtype Var = VVar { vName :: Text }
   deriving (Eq, Show)
 
 data UnOp = UNeg
@@ -18,7 +18,7 @@ data BinOp
 {-| Expressions. |-}
 data Expr
   = EInteger Int             -- ^ Integral literal
-  | EVar     Variable        -- ^ Variable
+  | EVar     Var             -- ^ Variable
   | EUnary   UnOp  Expr      -- ^ Unary operator
   | EBinary  BinOp Expr Expr -- ^ Binary operator
   deriving (Eq, Show)
@@ -31,3 +31,10 @@ instance Num Expr where
   negate = EUnary UNeg
   abs    = error "abs is not implemented for Expr"
   signum = error "signum is not implemented for Expr"
+
+data Stmt
+  = SAssign Var Expr
+  deriving (Eq, Show)
+
+pattern (:=) :: Var -> Expr -> Stmt
+pattern v := expr = SAssign v expr

@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.35.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 21bbd330f3ef9f3c9b284f585a0c6f857fe74d439532aeef923d367e0a1aef31
+-- hash: 3c6e7cfd19e458e3196e7c0b8ea1cdfa2676cb1cd744e8bc6641686cfe3e94a1
 
 name:           language-bruh
 version:        0.0.1.0
@@ -31,6 +31,9 @@ library
       Paths_language_bruh
   hs-source-dirs:
       src
+  default-extensions:
+      OverloadedStrings
+      PatternSynonyms
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
@@ -44,6 +47,9 @@ test-suite language-bruh-test
       Paths_language_bruh
   hs-source-dirs:
       test
+  default-extensions:
+      OverloadedStrings
+      PatternSynonyms
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
